@@ -13,7 +13,7 @@ namespace ArrChar_UI
         {
             FileArrayChar fileArrayChar = new FileArrayChar("1.txt", 7);
             fileArrayChar[2] = 'A';
-            fileArrayChar[4] = 'B';
+            fileArrayChar[4] = 'N';
             fileArrayChar[6] = 'C';
 
             for (int i = 0; i < fileArrayChar.Length; i++)

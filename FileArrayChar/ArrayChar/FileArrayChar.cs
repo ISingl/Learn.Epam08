@@ -17,11 +17,11 @@ namespace ArrayChar
 
                 using (FileStream fs = new FileStream(Path, FileMode.Open, FileAccess.Read))
                 {
-                    StreamReader sw = new StreamReader(fs, Encoding.ASCII);
+                    StreamReader sw = new StreamReader(fs, Encoding.GetEncoding("windows-1251"));
                     fs.Seek(i, SeekOrigin.Begin);
                     sw = new StreamReader(fs);
 
-                    tmp = (char)sw.Read();
+                    tmp = Convert.ToChar(sw.Read());
                     sw.Close();
                 }
 
@@ -31,7 +31,7 @@ namespace ArrayChar
             {
                 using (FileStream fs = new FileStream(Path, FileMode.Open, FileAccess.Write))
                 {
-                    StreamWriter sw = new StreamWriter(fs, Encoding.ASCII);
+                    StreamWriter sw = new StreamWriter(fs, Encoding.GetEncoding("windows-1251"));
                     sw.Flush();
                     fs.Seek(i, SeekOrigin.Begin);
                     sw = new StreamWriter(fs);
